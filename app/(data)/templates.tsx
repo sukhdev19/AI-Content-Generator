@@ -1,5 +1,145 @@
 export default [
     {
+        name: 'Code and Error Corrector',
+        desc: 'Analyze the input code and error message to provide a corrected version of the code.',
+        category: 'Programming & Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3909/3909597.png', // Debug icon
+        aiPrompt: 'Analyze the provided code and the corresponding error message. Identify the issue and return the corrected version of the code while explaining the changes made. Consider the constraints and context described as %.',
+        slug: 'code-error-corrector',
+        form: [
+            {
+                label: 'Paste your code here',
+                field: 'textarea',
+                name: 'code',
+                required: true
+            },
+            {
+                label: 'Paste the error message',
+                field: 'textarea',
+                name: 'error_message',
+                required: true
+            },
+            {
+                label: 'Describe the issue or when the error occurs (optional)',
+                field: 'textarea',
+                name: 'description',
+                required: false
+            },
+            {
+                label: 'Specify any additional constraints (e.g., expected time complexity)',
+                field: 'input',
+                name: 'constraints',
+                required: false
+            }
+        ]
+    },
+    
+    {
+        name: 'Code and Error Debugger',
+        desc: 'Analyze the input code and provided error message to identify and suggest fixes for the issue.',
+        category: 'Programming & Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3909/3909597.png', // Debug icon
+        aiPrompt: 'Analyze the provided code and the corresponding error message. Suggest the most likely cause of the error and propose a solution, considering the context and constraints described as %.',
+        slug: 'code-error-debugger',
+        form: [
+            {
+                label: 'Paste your code here',
+                field: 'textarea',
+                name: 'code',
+                required: true
+            },
+            {
+                label: 'Paste the error message',
+                field: 'textarea',
+                name: 'error_message',
+                required: true
+            },
+            {
+                label: 'Describe the issue or when the error occurs (optional)',
+                field: 'textarea',
+                name: 'description',
+                required: false
+            },
+            {
+                label: 'Specify any additional constraints (e.g., expected time complexity)',
+                field: 'input',
+                name: 'constraints',
+                required: false
+            }
+        ]
+    },
+    
+    {
+        name: 'Method Optimization',
+        desc: 'Optimize the implementation of your current method without changing the overall approach.',
+        category: 'Programming & Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/7179/7179790.png', // Optimization icon
+        aiPrompt: 'Analyze the provided method and suggest changes to improve efficiency while keeping the overall approach the same. The focus should be on improving runtime and memory usage with the constraints of %.',
+        slug: 'method-optimization',
+        form: [
+            {
+                label: 'Enter your current method implementation',
+                field: 'textarea',
+                name: 'method_code',
+                required: true
+            },
+            {
+                label: 'Describe the approach used (e.g., dynamic programming, recursion)',
+                field: 'input',
+                name: 'approach',
+                required: true
+            },
+            {
+                label: 'Input any specific constraints (e.g., time or space complexity requirements)',
+                field: 'textarea',
+                name: 'constraints',
+                required: false
+            },
+            {
+                label: 'Describe the performance issues or bottlenecks you are experiencing',
+                field: 'textarea',
+                name: 'performance_issues',
+                required: false
+            }
+        ]
+    },
+    
+    {
+        name: 'Code Performance Optimizer',
+        desc: 'Optimize your code by reducing its time complexity and enhancing performance.',
+        category: 'Programming & Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2803/2803181.png', // Stopwatch icon for performance
+        aiPrompt: 'Analyze the provided code for inefficiencies and suggest ways to reduce its time complexity, with a focus on % and constraints like %.',
+        slug: 'code-performance-optimizer',
+        form: [
+            {
+                label: 'Enter your problematic code',
+                field: 'textarea',
+                name: 'previous_code',
+                required: true
+            },
+            {
+                label: 'Describe the primary area of concern (e.g., loops, recursion)',
+                field: 'input',
+                name: 'focus',
+                required: true
+            },
+            {
+                label: 'Input any problem constraints (e.g., maximum input size)',
+                field: 'textarea',
+                name: 'constraints',
+                required: false
+            },
+            {
+                label: 'Describe the desired time complexity improvement',
+                field: 'textarea',
+                name: 'improvement',
+                required: false
+            }
+        ]
+    },
+    
+    {
         name: 'AI Art Generator',
         desc: 'Create stunning artwork based on your ideas or themes.',
         category: 'Art & Design',
@@ -3041,6 +3181,782 @@ export default [
                 label: 'Enter responsibilities',
                 field: 'textarea',
                 name: 'responsibilities',
+            }
+        ]
+    },
+    {
+        name: 'Business Marketing Strategy Generator',
+        desc: 'Create a tailored marketing strategy based on your business goals and target audience.',
+        category: 'Business & Marketing',
+        icon: 'https://cdn-icons-png.flaticon.com/128/753/753345.png', // Marketing icon
+        aiPrompt: 'Generate a marketing strategy for a % business, targeting % audience through % channels.',
+        slug: 'marketing-strategy-generator',
+        form: [
+            {
+                label: 'Enter your business type',
+                field: 'input',
+                name: 'businessType',
+                required: true
+            },
+            {
+                label: 'Enter your target audience',
+                field: 'input',
+                name: 'targetAudience',
+                required: true
+            },
+            {
+                label: 'Enter preferred marketing channels (e.g., social media, email)',
+                field: 'input',
+                name: 'marketingChannels',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Production Plan Generator',
+        desc: 'Develop a detailed production plan for your product or service.',
+        category: 'Production & Operations',
+        icon: 'https://cdn-icons-png.flaticon.com/128/4074/4074891.png', // Production icon
+        aiPrompt: 'Generate a production plan for a % product, considering factors like cost, timeline, and resources.',
+        slug: 'production-plan-generator',
+        form: [
+            {
+                label: 'Enter product or service type',
+                field: 'input',
+                name: 'productType',
+                required: true
+            },
+            {
+                label: 'Enter estimated production cost',
+                field: 'input',
+                name: 'productionCost',
+                required: true
+            },
+            {
+                label: 'Enter the production timeline',
+                field: 'input',
+                name: 'timeline',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Pine Script Strategy Generator',
+        desc: 'Create a custom Pine Script strategy for technical analysis and trading.',
+        category: 'Finance & Trading',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3144/3144456.png', // Pine Script icon
+        aiPrompt: 'Generate a Pine Script strategy for % using indicators like % and % with risk management.',
+        slug: 'pine-script-strategy-generator',
+        form: [
+            {
+                label: 'Enter the asset or market (e.g., stocks, crypto)',
+                field: 'input',
+                name: 'market',
+                required: true
+            },
+            {
+                label: 'Enter preferred technical indicators',
+                field: 'input',
+                name: 'indicators',
+                required: true
+            },
+            {
+                label: 'Enter risk management strategy',
+                field: 'input',
+                name: 'riskManagement',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Finance Market Study Generator',
+        desc: 'Generate a market study report with key insights and trends in the finance industry.',
+        category: 'Finance & Market Analysis',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1283/1283453.png', // Market study icon
+        aiPrompt: 'Generate a finance market study for the % sector, focusing on trends in % and key growth drivers.',
+        slug: 'finance-market-study-generator',
+        form: [
+            {
+                label: 'Enter the financial sector (e.g., fintech, real estate)',
+                field: 'input',
+                name: 'sector',
+                required: true
+            },
+            {
+                label: 'Enter the trend or focus area (e.g., investments, blockchain)',
+                field: 'input',
+                name: 'trend',
+                required: true
+            },
+            {
+                label: 'Enter growth drivers or challenges',
+                field: 'input',
+                name: 'growthDrivers',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Content Calendar Generator',
+        desc: 'Develop a content calendar for your business, targeting key dates and events.',
+        category: 'Business & Content Creation',
+        icon: 'https://cdn-icons-png.flaticon.com/128/535/535239.png', // Calendar icon
+        aiPrompt: 'Generate a content calendar for % business, focusing on % topics for % months.',
+        slug: 'content-calendar-generator',
+        form: [
+            {
+                label: 'Enter your business or industry',
+                field: 'input',
+                name: 'businessIndustry',
+                required: true
+            },
+            {
+                label: 'Enter content topics or themes',
+                field: 'input',
+                name: 'contentTopics',
+                required: true
+            },
+            {
+                label: 'Enter the timeframe (in months)',
+                field: 'input',
+                name: 'timeframe',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'SEO Optimization Plan Generator',
+        desc: 'Get an SEO optimization plan to improve your website’s visibility.',
+        category: 'Digital Marketing',
+        icon: 'https://cdn-icons-png.flaticon.com/128/7600/7600882.png', // SEO icon
+        aiPrompt: 'Generate an SEO optimization plan for % website, focusing on keywords related to %, with backlink strategies.',
+        slug: 'seo-plan-generator',
+        form: [
+            {
+                label: 'Enter your website URL',
+                field: 'input',
+                name: 'websiteUrl',
+                required: true
+            },
+            {
+                label: 'Enter target keywords or topics',
+                field: 'input',
+                name: 'keywords',
+                required: true
+            },
+            {
+                label: 'Enter any specific SEO strategies',
+                field: 'input',
+                name: 'strategies',
+                required: false
+            }
+        ]
+    },
+    {
+        name: 'Influencer Content Planner',
+        desc: 'Plan a month’s worth of engaging content for social media influencers.',
+        category: 'Influencer Marketing',
+        icon: 'https://cdn-icons-png.flaticon.com/128/747/747637.png', // Influencer icon
+        aiPrompt: 'Create a content plan for an influencer in the % niche, targeting % audience with a mix of % content types.',
+        slug: 'influencer-content-planner',
+        form: [
+            {
+                label: 'Enter your niche (e.g., beauty, fitness)',
+                field: 'input',
+                name: 'niche',
+                required: true
+            },
+            {
+                label: 'Enter target audience demographic',
+                field: 'input',
+                name: 'audience',
+                required: true
+            },
+            {
+                label: 'Enter content types (e.g., videos, reels, stories)',
+                field: 'input',
+                name: 'contentTypes',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Travel Itinerary Generator',
+        desc: 'Create a custom travel itinerary with top attractions, food recommendations, and accommodations.',
+        category: 'Travel & Tourism',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3064/3064197.png', // Travel icon
+        aiPrompt: 'Generate a travel itinerary for % destination, including must-see spots, recommended restaurants, and accommodation suggestions.',
+        slug: 'travel-itinerary-generator',
+        form: [
+            {
+                label: 'Enter your destination',
+                field: 'input',
+                name: 'destination',
+                required: true
+            },
+            {
+                label: 'Enter your travel dates or duration',
+                field: 'input',
+                name: 'travelDuration',
+                required: true
+            },
+            {
+                label: 'Enter any specific activities or interests (e.g., adventure, relaxation)',
+                field: 'input',
+                name: 'activities',
+                required: false
+            }
+        ]
+    },
+    {
+        name: 'Hiking Adventure Planner',
+        desc: 'Plan a hiking adventure with trail recommendations, difficulty levels, and gear suggestions.',
+        category: 'Outdoor & Adventure',
+        icon: 'https://cdn-icons-png.flaticon.com/128/4328/4328894.png', // Hiking icon
+        aiPrompt: 'Generate a hiking plan for % trail, including distance, difficulty level, and required gear.',
+        slug: 'hiking-adventure-planner',
+        form: [
+            {
+                label: 'Enter the hiking trail or location',
+                field: 'input',
+                name: 'trail',
+                required: true
+            },
+            {
+                label: 'Enter difficulty level (easy, medium, hard)',
+                field: 'input',
+                name: 'difficulty',
+                required: true
+            },
+            {
+                label: 'Enter preferred duration (in hours or days)',
+                field: 'input',
+                name: 'duration',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Event Planning Checklist',
+        desc: 'Generate a detailed checklist for planning any type of event, from weddings to corporate functions.',
+        category: 'Event Management',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1995/1995532.png', // Event icon
+        aiPrompt: 'Create an event planning checklist for a % event, including key milestones for budgeting, venue selection, and guest management.',
+        slug: 'event-planning-checklist',
+        form: [
+            {
+                label: 'Enter event type (e.g., wedding, corporate)',
+                field: 'input',
+                name: 'eventType',
+                required: true
+            },
+            {
+                label: 'Enter estimated event budget',
+                field: 'input',
+                name: 'budget',
+                required: true
+            },
+            {
+                label: 'Enter event date or timeline',
+                field: 'input',
+                name: 'eventDate',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Personal Finance Planner',
+        desc: 'Create a personal finance plan with budgeting, savings goals, and investment strategies.',
+        category: 'Finance & Personal Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1040/1040663.png', // Finance icon
+        aiPrompt: 'Generate a personal finance plan for % with a focus on budgeting, saving for %, and investing in %.',
+        slug: 'personal-finance-planner',
+        form: [
+            {
+                label: 'Enter your financial goal (e.g., saving for a house, retirement)',
+                field: 'input',
+                name: 'financialGoal',
+                required: true
+            },
+            {
+                label: 'Enter your monthly income',
+                field: 'input',
+                name: 'income',
+                required: true
+            },
+            {
+                label: 'Enter your risk tolerance for investments (low, medium, high)',
+                field: 'input',
+                name: 'riskTolerance',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Fitness Routine Generator',
+        desc: 'Build a personalized fitness routine based on your fitness goals and schedule.',
+        category: 'Health & Fitness',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1752/1752785.png', // Fitness icon
+        aiPrompt: 'Create a fitness routine for % with goals of %, focusing on workouts for % with a schedule of % days per week.',
+        slug: 'fitness-routine-generator',
+        form: [
+            {
+                label: 'Enter your fitness goals (e.g., weight loss, muscle gain)',
+                field: 'input',
+                name: 'fitnessGoal',
+                required: true
+            },
+            {
+                label: 'Enter preferred workout type (e.g., cardio, strength training)',
+                field: 'input',
+                name: 'workoutType',
+                required: true
+            },
+            {
+                label: 'Enter number of workout days per week',
+                field: 'input',
+                name: 'workoutDays',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Book Writing Outline Generator',
+        desc: 'Create an outline for your book with chapter ideas and a storyline.',
+        category: 'Writing & Publishing',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3145/3145766.png', // Book icon
+        aiPrompt: 'Generate a book outline for a % genre, including chapter ideas and a main storyline involving %.',
+        slug: 'book-outline-generator',
+        form: [
+            {
+                label: 'Enter the genre of your book (e.g., fiction, non-fiction)',
+                field: 'input',
+                name: 'genre',
+                required: true
+            },
+            {
+                label: 'Enter the main theme or plot idea',
+                field: 'input',
+                name: 'plotIdea',
+                required: true
+            },
+            {
+                label: 'Enter target audience (e.g., young adults, professionals)',
+                field: 'input',
+                name: 'targetAudience',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'AI-Powered Resume Builder',
+        desc: 'Generate a professional resume using AI, tailored to your industry and experience.',
+        category: 'Career Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3135/3135755.png', // Resume icon
+        aiPrompt: 'Create a resume for a % professional with % years of experience, highlighting skills in % and %.',
+        slug: 'ai-resume-builder',
+        form: [
+            {
+                label: 'Enter your profession or field',
+                field: 'input',
+                name: 'profession',
+                required: true
+            },
+            {
+                label: 'Enter your years of experience',
+                field: 'input',
+                name: 'experience',
+                required: true
+            },
+            {
+                label: 'Enter key skills or accomplishments',
+                field: 'input',
+                name: 'skills',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Sustainable Living Guide Generator',
+        desc: 'Generate a personalized sustainable living guide with eco-friendly tips.',
+        category: 'Sustainability',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2307/2307813.png', // Sustainability icon
+        aiPrompt: 'Create a sustainable living guide for % with a focus on reducing % and adopting eco-friendly practices in %.',
+        slug: 'sustainable-living-guide',
+        form: [
+            {
+                label: 'Enter your area of interest (e.g., waste reduction, energy efficiency)',
+                field: 'input',
+                name: 'interestArea',
+                required: true
+            },
+            {
+                label: 'Enter your current lifestyle (e.g., urban, suburban)',
+                field: 'input',
+                name: 'lifestyle',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Mental Health Improvement Plan',
+        desc: 'Get a customized mental health improvement plan with stress-relief activities and self-care routines.',
+        category: 'Health & Wellness',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2965/2965572.png', // Mental Health icon
+        aiPrompt: 'Generate a mental health improvement plan for someone experiencing %, focusing on self-care activities like % and %.',
+        slug: 'mental-health-plan-generator',
+        form: [
+            {
+                label: 'Enter the main mental health challenge (e.g., anxiety, stress)',
+                field: 'input',
+                name: 'mentalHealthChallenge',
+                required: true
+            },
+            {
+                label: 'Enter preferred self-care activities (e.g., meditation, journaling)',
+                field: 'input',
+                name: 'selfCareActivities',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Remote Work Setup Guide',
+        desc: 'Create a guide for setting up a productive and efficient remote work environment.',
+        category: 'Work From Home',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3061/3061933.png', // Remote Work icon
+        aiPrompt: 'Generate a remote work setup guide for a % professional, focusing on tools for % and tips for staying productive.',
+        slug: 'remote-work-setup-guide',
+        form: [
+            {
+                label: 'Enter your profession or role',
+                field: 'input',
+                name: 'profession',
+                required: true
+            },
+            {
+                label: 'Enter your preferred work tools (e.g., software, hardware)',
+                field: 'input',
+                name: 'workTools',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'AI-Based Content Creation Plan',
+        desc: 'Generate a content creation strategy powered by AI for blogs, social media, or websites.',
+        category: 'Content Creation',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2921/2921222.png', // AI Content icon
+        aiPrompt: 'Create an AI-based content creation plan for a % business, focusing on % type of content and targeting % audience.',
+        slug: 'ai-content-plan-generator',
+        form: [
+            {
+                label: 'Enter your business type or niche',
+                field: 'input',
+                name: 'businessType',
+                required: true
+            },
+            {
+                label: 'Enter content type (e.g., blogs, social media posts)',
+                field: 'input',
+                name: 'contentType',
+                required: true
+            },
+            {
+                label: 'Enter target audience',
+                field: 'input',
+                name: 'targetAudience',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Cryptocurrency Investment Strategy',
+        desc: 'Create a cryptocurrency investment strategy based on your risk tolerance and financial goals.',
+        category: 'Finance & Cryptocurrency',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2721/2721317.png', // Crypto icon
+        aiPrompt: 'Generate a cryptocurrency investment strategy for % with a focus on investing in % and managing risk with %.',
+        slug: 'crypto-investment-strategy',
+        form: [
+            {
+                label: 'Enter your risk tolerance (low, medium, high)',
+                field: 'input',
+                name: 'riskTolerance',
+                required: true
+            },
+            {
+                label: 'Enter preferred cryptocurrencies (e.g., Bitcoin, Ethereum)',
+                field: 'input',
+                name: 'cryptocurrencies',
+                required: true
+            },
+            {
+                label: 'Enter your investment goal (e.g., short-term gains, long-term holding)',
+                field: 'input',
+                name: 'investmentGoal',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'AI Chatbot Design',
+        desc: 'Generate a customized AI chatbot design for customer support or engagement.',
+        category: 'Artificial Intelligence',
+        icon: 'https://cdn-icons-png.flaticon.com/128/5726/5726415.png', // Chatbot icon
+        aiPrompt: 'Create an AI chatbot design for % business, focusing on handling % type of queries with a % tone.',
+        slug: 'ai-chatbot-design',
+        form: [
+            {
+                label: 'Enter your business type or niche',
+                field: 'input',
+                name: 'businessType',
+                required: true
+            },
+            {
+                label: 'Enter the type of queries the chatbot will handle',
+                field: 'input',
+                name: 'queryType',
+                required: true
+            },
+            {
+                label: 'Enter chatbot tone or style (e.g., formal, friendly)',
+                field: 'input',
+                name: 'chatbotTone',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'SaaS Product Launch Plan',
+        desc: 'Create a launch plan for a new SaaS product, including marketing and user acquisition strategies.',
+        category: 'Product Launch',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1077/1077341.png', // Product Launch icon
+        aiPrompt: 'Generate a SaaS product launch plan for %, including marketing strategies for %, and pricing models for % users.',
+        slug: 'saas-product-launch-plan',
+        form: [
+            {
+                label: 'Enter your SaaS product name or type',
+                field: 'input',
+                name: 'productName',
+                required: true
+            },
+            {
+                label: 'Enter your target market or audience',
+                field: 'input',
+                name: 'targetMarket',
+                required: true
+            },
+            {
+                label: 'Enter your user acquisition goal',
+                field: 'input',
+                name: 'userGoal',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'AI-Based Job Search Assistant',
+        desc: 'Get personalized job recommendations and application strategies powered by AI.',
+        category: 'Career Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3064/3064197.png', // Job Search icon
+        aiPrompt: 'Generate a job search strategy for a % professional, focusing on finding roles in % industries with skills in %.',
+        slug: 'job-search-assistant',
+        form: [
+            {
+                label: 'Enter your profession or field',
+                field: 'input',
+                name: 'profession',
+                required: true
+            },
+            {
+                label: 'Enter your target industry',
+                field: 'input',
+                name: 'industry',
+                required: true
+            },
+            {
+                label: 'Enter your key skills',
+                field: 'input',
+                name: 'skills',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Sustainable Fashion Guide',
+        desc: 'Generate a personalized guide to adopting sustainable fashion practices.',
+        category: 'Fashion & Lifestyle',
+        icon: 'https://cdn-icons-png.flaticon.com/128/7263/7263017.png', // Sustainable Fashion icon
+        aiPrompt: 'Create a sustainable fashion guide for %, focusing on eco-friendly materials, ethical brands, and % styling tips.',
+        slug: 'sustainable-fashion-guide',
+        form: [
+            {
+                label: 'Enter your current fashion style',
+                field: 'input',
+                name: 'fashionStyle',
+                required: true
+            },
+            {
+                label: 'Enter your preferred sustainable fashion focus (e.g., eco-friendly materials, ethical brands)',
+                field: 'input',
+                name: 'focusArea',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Mindfulness Meditation Routine',
+        desc: 'Create a mindfulness meditation routine personalized to your daily schedule and goals.',
+        category: 'Health & Wellness',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3441/3441221.png', // Meditation icon
+        aiPrompt: 'Generate a mindfulness meditation routine for % with the goal of % and sessions lasting % minutes.',
+        slug: 'meditation-routine-generator',
+        form: [
+            {
+                label: 'Enter your meditation goal (e.g., stress relief, focus)',
+                field: 'input',
+                name: 'meditationGoal',
+                required: true
+            },
+            {
+                label: 'Enter your preferred session length (in minutes)',
+                field: 'input',
+                name: 'sessionLength',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Climate Change Impact Study',
+        desc: 'Generate a localized climate change impact study for your region or industry.',
+        category: 'Climate Change',
+        icon: 'https://cdn-icons-png.flaticon.com/128/5184/5184497.png', // Climate Change icon
+        aiPrompt: 'Create a climate change impact study for the % region, focusing on effects on % and potential mitigation strategies.',
+        slug: 'climate-change-impact-study',
+        form: [
+            {
+                label: 'Enter your region or location',
+                field: 'input',
+                name: 'location',
+                required: true
+            },
+            {
+                label: 'Enter the specific industry or area of focus (e.g., agriculture, energy)',
+                field: 'input',
+                name: 'focusArea',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Tech Startup Business Plan',
+        desc: 'Create a comprehensive business plan for a tech startup, including market research and financial projections.',
+        category: 'Entrepreneurship',
+        icon: 'https://cdn-icons-png.flaticon.com/128/870/870193.png', // Startup icon
+        aiPrompt: 'Generate a business plan for a tech startup focusing on %, with market research in %, and a financial model projecting % growth.',
+        slug: 'tech-startup-business-plan',
+        form: [
+            {
+                label: 'Enter your tech startup idea or focus',
+                field: 'input',
+                name: 'startupIdea',
+                required: true
+            },
+            {
+                label: 'Enter target market or audience',
+                field: 'input',
+                name: 'targetMarket',
+                required: true
+            },
+            {
+                label: 'Enter projected growth or revenue goal',
+                field: 'input',
+                name: 'revenueGoal',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'AI Music Composition',
+        desc: 'Generate a music composition based on your preferred genre and mood.',
+        category: 'Music & Entertainment',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2768/2768577.png', // Music icon
+        aiPrompt: 'Compose a music piece in the % genre with a % mood, focusing on % instruments.',
+        slug: 'ai-music-composition',
+        form: [
+            {
+                label: 'Enter your preferred music genre (e.g., jazz, electronic)',
+                field: 'input',
+                name: 'genre',
+                required: true
+            },
+            {
+                label: 'Enter the mood of the composition (e.g., upbeat, calm)',
+                field: 'input',
+                name: 'mood',
+                required: true
+            },
+            {
+                label: 'Enter key instruments (optional)',
+                field: 'input',
+                name: 'instruments',
+                required: false
+            }
+        ]
+    },
+    {
+        name: 'Fitness Nutrition Plan',
+        desc: 'Generate a customized fitness nutrition plan to complement your workout routine and goals.',
+        category: 'Health & Fitness',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1857/1857793.png', // Nutrition icon
+        aiPrompt: 'Create a fitness nutrition plan for someone with goals of %, focusing on % diet types and incorporating % meals per day.',
+        slug: 'fitness-nutrition-plan',
+        form: [
+            {
+                label: 'Enter your fitness goal (e.g., muscle gain, weight loss)',
+                field: 'input',
+                name: 'fitnessGoal',
+                required: true
+            },
+            {
+                label: 'Enter preferred diet type (e.g., keto, vegetarian)',
+                field: 'input',
+                name: 'dietType',
+                required: true
+            },
+            {
+                label: 'Enter the number of meals per day',
+                field: 'input',
+                name: 'mealsPerDay',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Personalized Learning Path',
+        desc: 'Create a personalized learning path based on your career goals and skill gaps.',
+        category: 'Education & Career Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2942/2942269.png', // Education icon
+        aiPrompt: 'Generate a personalized learning path for someone in % career, focusing on acquiring skills in % with courses and resources on %.',
+        slug: 'personalized-learning-path',
+        form: [
+            {
+                label: 'Enter your career or field',
+                field: 'input',
+                name: 'career',
+                required: true
+            },
+            {
+                label: 'Enter your skill gap or focus area',
+                field: 'input',
+                name: 'skillGap',
+                required: true
+            },
+            {
+                label: 'Enter preferred learning format (e.g., online courses, books)',
+                field: 'input',
+                name: 'learningFormat',
+                required: false
             }
         ]
     }
