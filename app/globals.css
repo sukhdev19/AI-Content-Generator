@@ -76,3 +76,37 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Twinkling Stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s infinite alternate;
+}
+
+/* Spinning Galaxy */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+/* Orbiting Spacecraft */
+@keyframes orbit {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(30px) translateY(40px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.animate-orbit {
+  animation: orbit 8s ease-in-out infinite;
+}
+
+

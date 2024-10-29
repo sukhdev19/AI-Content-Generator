@@ -28,6 +28,8 @@ function CreateNewContent(props: PROPS) {
 
   const { user } = useUser();
 
+  // const {total,setTotalUsage}=useContext(TotalUsageContext)
+
   const GeneratedAIContent = async (formData: any) => {
     setLoading(true);
     const SelectedPrompt = selectedTemplate?.aiPrompt || ""; // Provide default empty string
